@@ -4,7 +4,7 @@
 
 ## The Concept
 
-Pulse is the ultimate AI COO for daily operations (Calendar, Email, Tasks). However, complex "Life Projects" like a job search—require a dedicated operational layer.
+Pulse is the ultimate AI COO for daily operations (Calendar, Email, Tasks). However, complex "Life Projects" like a job search require a dedicated operational layer.
 
 This prototype introduces **Career Ops**: A vertical module that unifies Pulse's existing capabilities into a pipeline view.
 
