@@ -23,7 +23,7 @@ Built with a "Speed & Scale" architecture suitable for rapid iteration.
 
 ## Key Features in Prototype
 
-1. **Pulse UI System:** Fully adapted to the Deep Black/Purple aesthetic of the Pulse Ecosystem.
+1. **Pulse UI System:** Adapted to the Deep Black/Purple aesthetic of the Pulse Ecosystem.
 2. **Agentic Mockup:** Demonstrates how the AI Agent proactively suggests actions (Drafting emails, Blocking calendar slots).
 3. **Zero-API Architecture:** Uses Server Actions to keep the client bundle minimal.
 
