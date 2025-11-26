@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000000; 
+  --foreground: #ffffff;
+  --card-bg: #111111; 
+  --card-border: #333333;
+  --accent-purple: #7c3aed; 
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+ 
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
