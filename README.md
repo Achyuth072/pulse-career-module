@@ -35,7 +35,7 @@ Built with a modern "Speed & Scale" architecture:
 ## Run Locally
 
 1.  Clone the repo
-2.  Copy `.env.example` to `.env` and add your Supabase credentials
+2.  Create an `.env` file and add your Supabase credentials
 3.  Install dependencies:
     ```bash
     npm install
