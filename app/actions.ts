@@ -1,30 +1,25 @@
-"use server"; // It tells Next.js "This runs on the server"
+"use server";
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { addJob } from "@/lib/data";
-import { JobApplication } from "@/types/job";
 
 export async function createJob(formData: FormData) {
-  // Extract data directly from the form
   const rawFormData = {
     company: formData.get("company") as string,
     role: formData.get("role") as string,
-    status: formData.get("status"),
+    status: formData.get("status") as string,
   };
 
-  // Create the new Job object
-  const newJob: JobApplication = {
-    id: Date.now().toString(), // Simple unique ID
+  // We only pass the raw data now.
+  // The DB handles the ID and Date generation.
+  await addJob({
     companyName: rawFormData.company,
     role: rawFormData.role,
-    status: rawFormData.status as JobApplication["status"], // Type casting
-    dateApplied: new Date(),
-  };
-
-  await addJob(newJob);
+    status: rawFormData.status,
+    aiAnalysis: "Pending AI Analysis...", // Placeholder for now
+  });
 
   revalidatePath("/");
-
   redirect("/");
 }
