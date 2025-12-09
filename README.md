@@ -1,34 +1,50 @@
-# Pulse Career Operations Module (Prototype)
+# Agentic Career CRM (Full Stack)
 
-**A specialized "Second Brain" workflow for managing high-stakes career moves.**
+**A specialized "Second Brain" workflow for managing high-stakes career pipelines.**
 
-## The Concept
+[**Live Demo**](https://www.google.com/url?sa=E&source=gmail&q=https://pulse-career-module.vercel.app)
 
-Pulse is the ultimate AI COO for daily operations (Calendar, Email, Tasks). However, complex "Life Projects" like a job search require a dedicated operational layer.
+## The Problem
 
-This prototype introduces **Career Ops**: A vertical module that unifies Pulse's existing capabilities into a pipeline view.
+Managing a job search involves high-friction operations: tracking applications across spreadsheets, drafting follow-up emails, and syncing calendar blocks. Generic tools lack the context to automate these specific workflows.
 
-* **Email Intelligence:** Instead of generic inbox flagging, it detects "Application Received" emails and auto-creates pipeline cards.
-* **Calendar Sync:** Blocks "Deep Work" sessions for coding assessments automatically.
-* **Agentic Insight:** Uses the Pulse AI Agent to analyze JD vs. Resume gaps.
+## The Solution
 
-## Technical Implementation
+This is a vertical SaaS prototype designed to automate the "Career Operations" lifecycle.
 
-Built with a "Speed & Scale" architecture suitable for rapid iteration.
+- **Pipeline Management:** A Kanban-style view of active applications with real-time status tracking.
+- **Agentic Drafting:** An integrated AI module that simulates drafting context-aware follow-up emails based on the role and company data.
+- **Focus Mode:** "Agentic Insight" logic that blocks deep-work calendar sessions for upcoming coding assessments.
 
-* **Framework:** Next.js 14 (App Router)
-* **Styling:** Tailwind CSS
-* **Backend:** Server Actions for zero-latency mutations.
-* **Persistence:** Custom file-system adapter (Node.js `fs`) to demonstrate schema handling without docker overhead.
+## Tech Stack (Production Grade)
 
-## Key Features in Prototype
+Built with a modern "Speed & Scale" architecture:
 
-1. **Pulse UI System:** Adapted to the Deep Black/Purple aesthetic of the Pulse Ecosystem.
-2. **Agentic Mockup:** Demonstrates how the AI Agent proactively suggests actions (Drafting emails, Blocking calendar slots).
-3. **Zero-API Architecture:** Uses Server Actions to keep the client bundle minimal.
+- **Frontend:** Next.js 14 (App Router), Tailwind CSS (Custom Dark Mode System)
+- **Backend:** Next.js Server Actions (Zero-API Architecture)
+- **Database:** PostgreSQL (Supabase) via Connection Pooling
+- **ORM:** Prisma 7 (Type-safe database access)
+- **Deployment:** Vercel Serverless
+
+## Key Features
+
+1.  **Zero-Latency Mutations:** Uses Optimistic UI patterns and Server Actions to ensure instant feedback.
+2.  **Type Safety:** End-to-end type inference from the Database schema (Prisma) to the React components.
+3.  **Enterprise UI:** A custom design system optimized for information density and reduced eye strain.
 
 ## Run Locally
 
-1. `npm install`
-2. `npm run dev`
-3. Visit `http://localhost:3000`
+1.  Clone the repo
+2.  Copy `.env.example` to `.env` and add your Supabase credentials
+3.  Install dependencies:
+    ```bash
+    npm install
+    ```
+4.  Sync Database:
+    ```bash
+    npx prisma db push
+    ```
+5.  Run Server:
+    ```bash
+    npm run dev
+    ```
