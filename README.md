@@ -2,19 +2,19 @@
 
 **A specialized "Second Brain" workflow for managing high-stakes career pipelines.**
 
-[**Live Demo**](https://www.google.com/url?sa=E&source=gmail&q=https://pulse-career-module.vercel.app)
+[**Live Demo**](https://pulse-career-module.vercel.app)
 
 ## The Problem
 
-Managing a job search involves high-friction operations: tracking applications across spreadsheets, drafting follow-up emails, and syncing calendar blocks. Generic tools lack the context to automate these specific workflows.
+Managing a job search involves high-friction operations: tracking applications across spreadsheets, drafting context-aware follow-up emails, and syncing calendar blocks. Generic tools lack the personal context to automate these specific workflows effectively.
 
 ## The Solution
 
-This is a vertical SaaS prototype designed to automate the "Career Operations" lifecycle.
+This is a vertical SaaS platform designed to automate the "Career Operations" lifecycle using Agentic workflows.
 
-- **Pipeline Management:** A Kanban-style view of active applications with real-time status tracking.
-- **Agentic Drafting:** An integrated AI module that simulates drafting context-aware follow-up emails based on the role and company data.
-- **Focus Mode:** "Agentic Insight" logic that blocks deep-work calendar sessions for upcoming coding assessments.
+- **RAG Pipeline (Context Awareness):** The system parses your uploaded resume (Text/PDF) and stores it as vector-ready context. It uses this ground truth to generate highly personalized emails that reference your actual skills.
+- **Agentic Drafting:** An integrated AI agent (Google Gemini) that drafts professional follow-up emails based on the specific job role + your resume context.
+- **Pipeline Management:** A Kanban-style view of active applications with real-time status tracking and "Action Item" generation.
 
 ## Tech Stack (Production Grade)
 
@@ -24,27 +24,47 @@ Built with a modern "Speed & Scale" architecture:
 - **Backend:** Next.js Server Actions (Zero-API Architecture)
 - **Database:** PostgreSQL (Supabase) via Connection Pooling
 - **ORM:** Prisma 7 (Type-safe database access)
+- **AI/LLM:** Google Gemini API (via AI Studio)
 - **Deployment:** Vercel Serverless
 
 ## Key Features
 
-1.  **Zero-Latency Mutations:** Uses Optimistic UI patterns and Server Actions to ensure instant feedback.
-2.  **Type Safety:** End-to-end type inference from the Database schema (Prisma) to the React components.
-3.  **Enterprise UI:** A custom design system optimized for information density and reduced eye strain.
+1.  **Resume RAG Pipeline:** Implements Retrieval-Augmented Generation by injecting user resume data into the LLM system prompt for context-aware outputs.
+2.  **Zero-Latency Mutations:** Uses Optimistic UI patterns and Server Actions to ensure instant feedback during pipeline moves.
+3.  **End-to-End Type Safety:** TypeScript schema inference flows directly from the Prisma Database model to the React UI components.
+4.  **Enterprise UI:** A custom "Executive Dark Mode" design system optimized for information density.
 
 ## Run Locally
 
-1.  Clone the repo
-2.  Create an `.env` file and add your Supabase credentials
-3.  Install dependencies:
+1.  **Clone the repo**
+
+    ```bash
+    git clone [https://github.com/your-username/pulse-career-module.git](https://github.com/your-username/pulse-career-module.git)
+    cd pulse-career-module
+    ```
+
+2.  **Install dependencies**
+
     ```bash
     npm install
     ```
-4.  Sync Database:
+
+3.  **Configure Environment**
+    Copy the example environment file:
+
+    ```bash
+    cp .env.example .env
+    ```
+
+    _Open `.env` and fill in your Supabase and Google Gemini credentials._
+
+4.  **Sync Database**
+
     ```bash
     npx prisma db push
     ```
-5.  Run Server:
+
+5.  **Run Server**
     ```bash
     npm run dev
     ```
