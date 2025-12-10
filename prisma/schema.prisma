@@ -15,3 +15,9 @@ model JobApplication {
   aiAnalysis  String?
   createdAt   DateTime @default(now())
 }
+
+model UserProfile {
+  id         String   @id @default(uuid())
+  resumeText String   @db.Text // Store the parsed text here
+  updatedAt  DateTime @updatedAt
+}

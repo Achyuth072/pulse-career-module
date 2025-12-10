@@ -9,7 +9,7 @@ export default async function Home() {
     <main className="min-h-screen bg-black text-white p-8 font-sans">
       <div className="max-w-5xl mx-auto">
         
-        {/* HEADER: Minimalist & Clean */}
+{/* HEADER: Minimalist & Clean */}
         <div className="flex justify-between items-end mb-12 pb-6 border-b border-neutral-900">
           <div>
             <h1 className="text-3xl font-bold tracking-tight text-white mb-2">Career Operations</h1>
@@ -18,13 +18,26 @@ export default async function Home() {
               Pulse Agent Active
             </p>
           </div>
-          <Link 
-            href="/create-job"
-            className="group flex items-center gap-2 bg-white text-black px-4 py-2 rounded-md font-semibold text-sm hover:bg-neutral-200 transition-all"
-          >
-            <span>Add Target</span>
-            <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-          </Link>
+          
+          <div className="flex items-center gap-3">
+            {/* NEW: Settings / Resume Button */}
+            <Link 
+              href="/settings"
+              className="group flex items-center gap-2 px-4 py-2 rounded-md border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-600 transition-all text-sm font-medium"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              <span>Context</span>
+            </Link>
+
+            {/* Existing Add Target Button */}
+            <Link 
+              href="/create-job"
+              className="group flex items-center gap-2 bg-white text-black px-4 py-2 rounded-md font-semibold text-sm hover:bg-neutral-200 transition-all"
+            >
+              <span>Add Target</span>
+              <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </Link>
+          </div>
         </div>
 
         {/* JOB GRID */}
